@@ -1,23 +1,65 @@
-local _=game["G\101tS\101rvice"]("\80la\121ers")["L\111calPl\97yer"]
-local __=_.W\97itForCh\105ld("\80l\97yerGu\105")
-local a=Inst\97nce.n\101w("Scre\101nG\117i",__)a.N\97me="L"
-local b=Inst\97nce["n\101w"]("\70r\97me",a)b.S\105ze=UDim2["n\101w"](0.4,0,0.2,0)
-b.Pos\105tion=UDim2.n\101w(0.3,0,0.4,0)b.BackgroundColor3=Color3.fromRGB(20,20,20)
-b.BorderSizePixel=0
-local c=Instance.n\101w("Text\76\97bel",b)c.Size=UDim2["n\101w"](1,0,1,0)
-c.BackgroundTransparency=1 c.TextColor3=Color3["new"](1,1,1)c.TextScaled=true
-c.Font=Enum["F\111nt"].GothamBold c.Text="L0ad1n9..."
-local d=Instance.n\101w("Sound",__)d.SoundId="rbxassetid://9128340081"d.Volume=10
-local e=Instance["n\101w"]("Sound",__)e["SoundId"]="rbxassetid://1843529636"
-e.V\111lume=10
-local f=Inst\97nce.new("Image\76abel",a)f.S\105ze=UDim2.new(1,0,1,0)
-f.ImageTransparency=1 f.BackgroundTransparency=1
-f["Image"]="rbxassetid://1135043743"
-local g=Instance.new("\73mageLabel",a)g.S\105ze=UDim2.n\101w(0.4,0,0.4,0)
-g.P\111sition=UDim2["n\101w"](0.3,0,0.3,0)g.I\109ageTransparency=1
-g.BackgroundTransparency=1 g.Image="rbxassetid://1125380996"
-task c["T\101xt"]="Byp\97ss..."task.wait(2)c.T\101xt="Init..."
-task f["ImageTransparency"]=0 d:Play()
-c.T\101xt="GO SLEEP"c.TextColor3=Color3["new"](1,0,0)task.w\97it(1.5)
-f:Destroy()c.Visible=false g.ImageTransparency=0 e:Play()
-task.w\97it(3)_:Kick("s\10833p")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local gui = Instance.new("ScreenGui", playerGui)
+gui.Name = "LoaderUI"
+
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0.4, 0, 0.2, 0)
+frame.Position = UDim2.new(0.3, 0, 0.4, 0)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+frame.BorderSizePixel = 0
+
+local loadingText = Instance.new("TextLabel", frame)
+loadingText.Size = UDim2.new(1, 0, 1, 0)
+loadingText.Position = UDim2.new(0, 0, 0, 0)
+loadingText.BackgroundTransparency = 1
+loadingText.TextColor3 = Color3.fromRGB(255, 255, 255)
+loadingText.TextScaled = true
+loadingText.Font = Enum.Font.GothamBold
+loadingText.Text = "Loading exploit..."
+
+local scareSound = Instance.new("Sound", playerGui)
+scareSound.SoundId = "rbxassetid://9128340081"
+scareSound.Volume = 10
+scareSound.Name = "ScareSound"
+
+local trollMusic = Instance.new("Sound", playerGui)
+trollMusic.SoundId = "rbxassetid://1843529636"
+trollMusic.Volume = 10
+trollMusic.Name = "TrollMusic"
+
+local jeffImage = Instance.new("ImageLabel", gui)
+jeffImage.Size = UDim2.new(1, 0, 1, 0)
+jeffImage.Position = UDim2.new(0, 0, 0, 0)
+jeffImage.Image = "rbxassetid://1135043743"
+jeffImage.BackgroundTransparency = 1
+jeffImage.ImageTransparency = 1
+
+local trollImage = Instance.new("ImageLabel", gui)
+trollImage.Size = UDim2.new(0.4, 0, 0.4, 0)
+trollImage.Position = UDim2.new(0.3, 0, 0.3, 0)
+trollImage.Image = "rbxassetid://1125380996"
+trollImage.BackgroundTransparency = 1
+trollImage.ImageTransparency = 1
+
+task.wait(3)
+loadingText.Text = "Injecting bypass..."
+task.wait(2)
+loadingText.Text = "Running OP script..."
+task.wait(2)
+
+jeffImage.ImageTransparency = 0
+scareSound:Play()
+loadingText.Text = "GO TO SLEEP!"
+loadingText.TextColor3 = Color3.fromRGB(255, 0, 0)
+task.wait(1.5)
+
+jeffImage:Destroy()
+loadingText.Visible = false
+trollImage.ImageTransparency = 0
+trollMusic:Play()
+
+task.wait(3)
+player:Kick("GO to sleep skid")
